@@ -13,7 +13,10 @@ class HomeController: UIViewController {
     let data = CarData()
     var cars = [CarList]()
     let manager = UserDefaultsManager()
+    var existedCars = [CarList]()
+    var searchedCars = [CarList]()
     
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet private weak var categoryListCollection: UICollectionView!
     @IBOutlet private weak var searchTextField: UITextField!
     override func viewDidLoad() {
@@ -24,11 +27,7 @@ class HomeController: UIViewController {
     
     func configUI() {
         title = "Car Rental"
-        searchTextField.layer.borderWidth = 1
-        searchTextField.layer.borderColor = UIColor.white.cgColor
-        searchTextField.layer.masksToBounds = true
-        searchTextField.layer.cornerRadius = 30
-        searchTextField.borderStyle = .roundedRect
+        searchView.layer.cornerRadius = 30
         categoryListCollection.delegate = self
         categoryListCollection.dataSource = self
         categoryListCollection.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCell")
@@ -38,6 +37,17 @@ class HomeController: UIViewController {
         }
         carHelper.fetchData { carList in
             cars = carList
+        }
+    }
+    
+    
+    @IBAction func searchField(_ sender: Any) {
+        if let search = searchTextField.text?.isEmpty {
+            existedCars = cars
+            categoryListCollection.reloadData()
+        } else if cars.contains(where: { $0.name == searchTextField.text }) {
+            searchedCars = cars
+            categoryListCollection.reloadData()
         }
     }
 }

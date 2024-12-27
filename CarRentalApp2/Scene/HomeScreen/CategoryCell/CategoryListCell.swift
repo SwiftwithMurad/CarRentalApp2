@@ -21,7 +21,6 @@ class CategoryListCell: UICollectionViewCell {
     }
     
     func configUI() {
-//        layer.backgroundColor = UIColor.white.cgColor
         layer.cornerRadius = 30
     }
     

@@ -25,11 +25,11 @@ class CarData {
         categoryHelper.saveData(carCategory: category4)
         
         //save car
-        let car1 = Car(name: "KIA", model: "Stinger", image: "car_1", engine: "6-Cyl 2.5 Liter", price: "$25000", category: category1)
+        let car1 = Car(name: "KIA", model: "Stinger", image: "stinger", engine: "6-Cyl 2.5 Liter", price: "$25000", category: category1)
         carHelper.saveData(car: car1)
         let car2 = Car(name: "Mercedes", model: "C-class", image: "car_2", engine: "6-Cyl 3.0 Liter", price: "$30000", category: category2)
         carHelper.saveData(car: car2)
-        let car3 = Car(name: "Jeep", model: "GrandCheeroke", image: "car_3", engine: "8-Cyl 6.0 Liter", price: "$70000", category: category3)
+        let car3 = Car(name: "Jeep", model: "GrandCheeroke", image: "jeep", engine: "8-Cyl 6.2 Liter", price: "$70000", category: category3)
         carHelper.saveData(car: car3)
         let car4 = Car(name: "Toyota", model: "Yaris İA", image: "car_4", engine: "4-Cyl 1.5 Liter", price: "$10000", category: category4)
         carHelper.saveData(car: car4)
