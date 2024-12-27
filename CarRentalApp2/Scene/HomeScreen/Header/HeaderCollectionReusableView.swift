@@ -10,7 +10,6 @@ import UIKit
 class HeaderCollectionReusableView: UICollectionReusableView {
     var category = [CategoryList]()
     let categoryHelper = CategoryCoreDataHelper()
-    let data = CarData()
     
     @IBOutlet private weak var headerCollection: UICollectionView!
     override func awakeFromNib() {
@@ -24,7 +23,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         headerCollection.delegate = self
         headerCollection.dataSource = self
         headerCollection.register(UINib(nibName: "\(HeaderCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HeaderCell.self)")
-        data.saveData()
         categoryHelper.fetchData { categoryList in
             category = categoryList
         }
