@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCell" id="Bgx-3r-2kt" customClass="HeaderCell" customModule="CarRentalApp2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="101" height="159"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="101" height="159"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGh-my-BO0">
+                        <rect key="frame" x="16" y="0.0" width="85" height="159"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pOh-fo-Wr5">
+                                <rect key="frame" x="-24" y="0.0" width="101" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="Wgy-va-vlu"/>
+                                    <constraint firstAttribute="width" constant="101" id="cvA-WN-X9U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDx-JA-kjC">
+                                <rect key="frame" x="21.666666666666664" y="101" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDi-fK-1zT">
+                                <rect key="frame" x="21.666666666666664" y="130" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KDi-fK-1zT" firstAttribute="top" secondItem="mDx-JA-kjC" secondAttribute="bottom" constant="8" symbolic="YES" id="7VP-Ym-uEQ"/>
+                            <constraint firstItem="KDi-fK-1zT" firstAttribute="centerX" secondItem="mDx-JA-kjC" secondAttribute="centerX" id="Qla-cB-8lD"/>
+                            <constraint firstItem="mDx-JA-kjC" firstAttribute="top" secondItem="BGh-my-BO0" secondAttribute="top" constant="101" id="fXw-wB-P4l"/>
+                            <constraint firstAttribute="trailing" secondItem="pOh-fo-Wr5" secondAttribute="trailing" constant="8" id="g14-w3-Nzs"/>
+                            <constraint firstItem="mDx-JA-kjC" firstAttribute="centerX" secondItem="BGh-my-BO0" secondAttribute="centerX" id="lic-qR-Ll4"/>
+                            <constraint firstItem="pOh-fo-Wr5" firstAttribute="top" secondItem="BGh-my-BO0" secondAttribute="top" id="vGB-jX-LXN"/>
+                            <constraint firstItem="pOh-fo-Wr5" firstAttribute="leading" secondItem="BGh-my-BO0" secondAttribute="leading" constant="-24" id="wp6-GT-5Jn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="hVn-1o-0FK"/>
+            <constraints>
+                <constraint firstItem="BGh-my-BO0" firstAttribute="top" secondItem="Bgx-3r-2kt" secondAttribute="top" id="ZsX-M0-bEH"/>
+                <constraint firstItem="BGh-my-BO0" firstAttribute="leading" secondItem="Bgx-3r-2kt" secondAttribute="leading" constant="16" id="ajO-KQ-jcX"/>
+                <constraint firstAttribute="trailing" secondItem="BGh-my-BO0" secondAttribute="trailing" id="pg5-EZ-hF9"/>
+                <constraint firstAttribute="bottom" secondItem="BGh-my-BO0" secondAttribute="bottom" id="q7A-gF-rQ0"/>
+            </constraints>
+            <size key="customSize" width="101" height="159"/>
+            <connections>
+                <outlet property="carImage" destination="pOh-fo-Wr5" id="cm5-9p-uo6"/>
+                <outlet property="categoryName" destination="mDx-JA-kjC" id="wST-OO-9Mn"/>
+                <outlet property="categorySize" destination="KDi-fK-1zT" id="TfR-M4-nur"/>
+                <outlet property="categoryView" destination="BGh-my-BO0" id="d9F-RS-KOX"/>
+            </connections>
+            <point key="canvasLocation" x="281.67938931297709" y="23.591549295774648"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
