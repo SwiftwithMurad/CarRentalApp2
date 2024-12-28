@@ -4,19 +4,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionReusableView" id="e7s-hn-ENZ" customClass="HeaderCollectionReusableView" customModule="CarRentalApp2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="381" height="146"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7oG-iK-qs6">
-                    <rect key="frame" x="0.0" y="0.0" width="381" height="104"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="118"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q74-26-UEr">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -25,20 +24,21 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Vehicles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-Be-p2p">
-                    <rect key="frame" x="16" y="125" width="135" height="21"/>
+                    <rect key="frame" x="16" y="179" width="135" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="R1N-zI-idK"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="EOJ-Be-p2p" firstAttribute="top" secondItem="7oG-iK-qs6" secondAttribute="bottom" constant="21" id="AAu-hF-SyP"/>
-                <constraint firstItem="7oG-iK-qs6" firstAttribute="top" secondItem="e7s-hn-ENZ" secondAttribute="top" id="UPU-8X-4fw"/>
+                <constraint firstItem="R1N-zI-idK" firstAttribute="bottom" secondItem="7oG-iK-qs6" secondAttribute="bottom" constant="48" id="0XA-Bi-MA6"/>
                 <constraint firstItem="7oG-iK-qs6" firstAttribute="leading" secondItem="R1N-zI-idK" secondAttribute="leading" id="WMI-T8-jaa"/>
+                <constraint firstItem="7oG-iK-qs6" firstAttribute="top" secondItem="e7s-hn-ENZ" secondAttribute="top" id="bgw-c5-iwX"/>
                 <constraint firstItem="EOJ-Be-p2p" firstAttribute="leading" secondItem="e7s-hn-ENZ" secondAttribute="leading" constant="16" id="qaF-yN-VFy"/>
                 <constraint firstItem="R1N-zI-idK" firstAttribute="trailing" secondItem="7oG-iK-qs6" secondAttribute="trailing" id="tk4-C9-daa"/>
-                <constraint firstItem="R1N-zI-idK" firstAttribute="bottom" secondItem="7oG-iK-qs6" secondAttribute="bottom" constant="8" id="xhA-zQ-In3"/>
+                <constraint firstAttribute="bottom" secondItem="EOJ-Be-p2p" secondAttribute="bottom" id="uw3-AM-8te"/>
             </constraints>
             <connections>
                 <outlet property="headerCollection" destination="7oG-iK-qs6" id="HbO-pC-Xe3"/>
@@ -46,9 +46,4 @@
             <point key="canvasLocation" x="75.572519083969468" y="54.225352112676056"/>
         </collectionReusableView>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -26,7 +26,6 @@ class HomeController: UIViewController {
     }
     
     func configUI() {
-        title = "Car Rental"
         searchView.layer.cornerRadius = 30
         categoryListCollection.delegate = self
         categoryListCollection.dataSource = self
@@ -37,17 +36,20 @@ class HomeController: UIViewController {
         }
         carHelper.fetchData { carList in
             cars = carList
+            existedCars = carList
         }
     }
     
     
     @IBAction func searchField(_ sender: Any) {
-        if let search = searchTextField.text?.isEmpty {
-            existedCars = cars
-            categoryListCollection.reloadData()
-        } else if cars.contains(where: { $0.name == searchTextField.text }) {
-            searchedCars = cars
-            categoryListCollection.reloadData()
+        if let search = searchTextField.text?.lowercased() {
+            if cars.contains(where: { $0.name?.lowercased() == search }) {
+                cars = cars.filter({ $0.name?.lowercased() == search })
+                categoryListCollection.reloadData()
+            } else if search.isEmpty {
+                cars = existedCars
+                categoryListCollection.reloadData()
+            }
         }
     }
 }

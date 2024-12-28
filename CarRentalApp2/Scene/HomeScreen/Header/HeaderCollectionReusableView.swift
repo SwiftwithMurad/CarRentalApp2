@@ -19,7 +19,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     }
     
     func configUI() {
-        headerCollection.backgroundColor = .systemGray5
+//        headerCollection.backgroundColor = .systemGray5
         headerCollection.delegate = self
         headerCollection.dataSource = self
         headerCollection.register(UINib(nibName: "\(HeaderCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HeaderCell.self)")
@@ -37,7 +37,6 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HeaderCell.self)", for: indexPath) as! HeaderCell
         cell.configCell(category: category[indexPath.row]) { view in
-            backgroundColor = .white
             view.layer.cornerRadius = 30
         }
         return cell

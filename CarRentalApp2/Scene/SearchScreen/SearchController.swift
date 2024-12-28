@@ -10,6 +10,7 @@ import UIKit
 class SearchController: UIViewController {
     let carHelper = CarCoreDataHelper()
     var cars = [CarList]()
+    var existedCars = [CarList]()
     
     @IBOutlet weak var searchCollection: UICollectionView!
     @IBOutlet weak var searchFieldText: UITextField!
@@ -21,20 +22,28 @@ class SearchController: UIViewController {
     }
     
     func configUI() {
-        title = "Search"
         searchFieldView.layer.cornerRadius = 30
         searchCollection.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellWithReuseIdentifier: "CategoryListCell")
         searchCollection.delegate = self
         searchCollection.dataSource = self
         carHelper.fetchData { carList in
             cars = carList
+            existedCars = carList
         }
     }
     
     
 
     @IBAction func searchField(_ sender: Any) {
-        
+        if let search = searchFieldText.text?.lowercased() {
+            if cars.contains(where: { $0.name?.lowercased() == search }) {
+                cars = cars.filter({ $0.name?.lowercased() == search })
+                searchCollection.reloadData()
+            } else if search.isEmpty {
+                cars = existedCars
+                searchCollection.reloadData()
+            }
+        }
     }
 }
 
