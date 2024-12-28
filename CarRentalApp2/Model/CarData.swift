@@ -33,5 +33,15 @@ class CarData {
         carHelper.saveData(car: car3)
         let car4 = Car(name: "Toyota", model: "Yaris İA", image: "car_4", engine: "4-Cyl 1.5 Liter", price: "$10000", category: category4)
         carHelper.saveData(car: car4)
+        let car5 = Car(name: "Mercedes", model: "Gt63s", image: "gt63s", engine: "8-Cyl 4.0 Liter", price: "$100000", category: category2)
+        carHelper.saveData(car: car5)
+        let car6 = Car(name: "KIA", model: "K5", image: "k5", engine: "6-Cyl 2.0 Liter Turbo", price: "$25000", category: category1)
+        carHelper.saveData(car: car6)
+        let car7 = Car(name: "BMW", model: "M4 CSL", image: "m4", engine: "6-Cyl 3.0 Liter", price: "$80000", category: category2)
+        carHelper.saveData(car: car7)
+        let car8 = Car(name: "Toyota", model: "GR Corolla", image: "grcorolla", engine: "3-Cyl 1.6 Liter Turbo", price: "$50000", category: category2)
+        carHelper.saveData(car: car8)
+        let car9 = Car(name: "Mercedes", model: "E63 Amg", image: "e63s", engine: "8-Cyl 4.0 Liter", price: "$70000", category: category2)
+        carHelper.saveData(car: car9)
     }
 }

@@ -21,7 +21,7 @@ class CategoryListCell: UICollectionViewCell {
     }
     
     func configUI() {
-        layer.cornerRadius = 30
+        layer.cornerRadius = 35
     }
     
     func configCell(car: CarList) {

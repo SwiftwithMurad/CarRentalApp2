@@ -19,7 +19,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     }
     
     func configUI() {
-//        headerCollection.backgroundColor = .systemGray5
         headerCollection.delegate = self
         headerCollection.dataSource = self
         headerCollection.register(UINib(nibName: "\(HeaderCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HeaderCell.self)")
@@ -43,6 +42,6 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: headerCollection.frame.size.width / 2.8 , height: 150)
+        .init(width: headerCollection.frame.size.width / 2.8 , height: 155)
     }
 }

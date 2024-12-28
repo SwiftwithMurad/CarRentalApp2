@@ -191,6 +191,7 @@
                                 <subviews>
                                     <textField opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for a car" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zno-sQ-SGg">
                                         <rect key="frame" x="24.666666666666657" y="3.3333333333333286" width="304" height="51.333333333333336"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
