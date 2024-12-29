@@ -32,8 +32,6 @@ class SearchController: UIViewController {
         }
     }
     
-    
-
     @IBAction func searchField(_ sender: Any) {
         if let search = searchFieldText.text?.lowercased() {
             if cars.contains(where: { $0.name?.lowercased() == search }) {

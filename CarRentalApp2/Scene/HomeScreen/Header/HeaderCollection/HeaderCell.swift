@@ -24,4 +24,14 @@ class HeaderCell: UICollectionViewCell {
         categorySize.text = category.size
         configView(categoryView)
     }
+    
+    func configView(completion: ((UIView) -> Void), category: CategoryList) {
+        completion(categoryView)
+        carImage.image = UIImage(named: category.image ?? "")
+        categoryName.text = category.name
+        categorySize.text = category.size
+        categoryName.textColor = .white
+        categorySize.textColor = .white
+        
+    }
 }

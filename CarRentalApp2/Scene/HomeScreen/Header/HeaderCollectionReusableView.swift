@@ -44,4 +44,12 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: headerCollection.frame.size.width / 2.8 , height: 155)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HeaderCell
+        cell.configView(completion: { view in
+            view.layer.cornerRadius = 30
+            view.backgroundColor = .systemBlue
+        }, category: category[indexPath.row])
+    }
 }

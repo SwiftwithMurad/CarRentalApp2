@@ -15,13 +15,13 @@ class CarData {
     func saveData() {
         manager.setValue(value: true, key: .isSaved)
         //save category
-        let category1 = CarCategory(name: "Standard", image: "car_1", size: "4")
+        let category1 = CarCategory(name: "Standard", image: "car_1", size: "4", isSelected: true)
         categoryHelper.saveData(carCategory: category1)
-        let category2 = CarCategory(name: "Prestige", image: "car_2", size: "5")
+        let category2 = CarCategory(name: "Prestige", image: "car_2", size: "5", isSelected: true)
         categoryHelper.saveData(carCategory: category2)
-        let category3 = CarCategory(name: "SUV", image: "car_3", size: "4")
+        let category3 = CarCategory(name: "SUV", image: "car_3", size: "4", isSelected: true)
         categoryHelper.saveData(carCategory: category3)
-        let category4 = CarCategory(name: "Comfort", image: "car_4", size: "5")
+        let category4 = CarCategory(name: "Comfort", image: "car_4", size: "5", isSelected: true)
         categoryHelper.saveData(carCategory: category4)
         
         //save car
@@ -43,5 +43,19 @@ class CarData {
         carHelper.saveData(car: car8)
         let car9 = Car(name: "Mercedes", model: "E63 Amg", image: "e63s", engine: "8-Cyl 4.0 Liter", price: "$70000", category: category2)
         carHelper.saveData(car: car9)
+        let car10 = Car(name: "BMW", model: "M5 competition", image: "m5", engine: "8-Cyl 4.4 Liter", price: "$90000", category: category2)
+        carHelper.saveData(car: car10)
+        let car11 = Car(name: "BMW", model: "M8 competition", image: "m8", engine: "8-Cyl 4.4 Liter", price: "$120000", category: category2)
+        carHelper.saveData(car: car11)
+        let car12 = Car(name: "Jeep", model: "Wrangler", image: "wrangler", engine: "6-Cyl 3.6 Liter", price: "$70000", category: category3)
+        carHelper.saveData(car: car12)
+        let car13 = Car(name: "Mercedes", model: "G63 Amg", image: "g63", engine: "8-Cyl 4.0 Liter", price: "$140000", category: category3)
+        carHelper.saveData(car: car13)
+        let car14 = Car(name: "Toyota", model: "Prius", image: "prius", engine: "3-Cyl 2.0 Liter Hybrid", price: "$40000", category: category4)
+        carHelper.saveData(car: car14)
+        let car15 = Car(name: "BMW", model: "X7 M", image: "x7", engine: "8-Cyl 4.4 Liter", price: "$140000", category: category3)
+        carHelper.saveData(car: car15)
+        let car16 = Car(name: "BMW", model: "M3 Competition", image: "m3", engine: "6-Cyl 3.0 Liter", price: "$90000", category: category2)
+        carHelper.saveData(car: car16)
     }
 }
