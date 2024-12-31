@@ -20,5 +20,4 @@ struct CarCategory {
     let name: String?
     let image: String?
     let size: String?
-    let isSelected: Bool?
 }

@@ -12,9 +12,11 @@ class HomeController: UIViewController {
     let carHelper = CarCoreDataHelper()
     let data = CarData()
     var cars = [CarList]()
+    var category = [CategoryList]()
     let manager = UserDefaultsManager()
     var existedCars = [CarList]()
     var searchedCars = [CarList]()
+    let categoryHelper = CategoryCoreDataHelper()
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet private weak var categoryListCollection: UICollectionView!
@@ -38,6 +40,10 @@ class HomeController: UIViewController {
             cars = carList
             existedCars = carList
         }
+        
+        categoryHelper.fetchData { categoryList in
+            category = categoryList
+        }
     }
     
     
@@ -53,7 +59,6 @@ class HomeController: UIViewController {
         }
     }
 }
-
 
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,6 +78,16 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
+        header.configCategory(category: category)
+        header.sendCollection = { collection in
+            if self.category[indexPath.row].isSelected == true {
+                self.cars = self.cars.filter({ $0.category == self.category[indexPath.row].name })
+                self.categoryListCollection.reloadData()
+            } else if self.category[indexPath.row].isSelected == false {
+                self.cars = self.existedCars
+                self.categoryListCollection.reloadData()
+            }
+        }
         return header
     }
     

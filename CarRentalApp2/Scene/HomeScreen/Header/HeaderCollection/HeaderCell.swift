@@ -13,25 +13,23 @@ class HeaderCell: UICollectionViewCell {
     @IBOutlet private weak var categorySize: UILabel!
     @IBOutlet private weak var categoryName: UILabel!
     @IBOutlet private weak var carImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        categoryView.layer.cornerRadius = 30
     }
     
-    func configCell(category: CategoryList, configView: ((UIView) -> Void)) {
+    func configCell(category: CategoryList) {
         carImage.image = UIImage(named: category.image ?? "")
         categoryName.text = category.name
         categorySize.text = category.size
-        configView(categoryView)
+        category.isSelected = false
     }
     
-    func configView(completion: ((UIView) -> Void), category: CategoryList) {
-        completion(categoryView)
-        carImage.image = UIImage(named: category.image ?? "")
-        categoryName.text = category.name
-        categorySize.text = category.size
-        categoryName.textColor = .white
-        categorySize.textColor = .white
-        
+    func updateView(isSelected: Bool) {
+        categoryView?.backgroundColor = isSelected ? .systemBlue: .white
+        categoryName.textColor = isSelected ? .white: .black
+        categorySize.textColor = isSelected ? .white: .lightGray
     }
 }

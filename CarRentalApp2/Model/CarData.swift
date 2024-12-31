@@ -15,13 +15,13 @@ class CarData {
     func saveData() {
         manager.setValue(value: true, key: .isSaved)
         //save category
-        let category1 = CarCategory(name: "Standard", image: "car_1", size: "4", isSelected: true)
+        let category1 = CarCategory(name: "Standard", image: "car_1", size: "4")
         categoryHelper.saveData(carCategory: category1)
-        let category2 = CarCategory(name: "Prestige", image: "car_2", size: "5", isSelected: true)
+        let category2 = CarCategory(name: "Prestige", image: "car_2", size: "5")
         categoryHelper.saveData(carCategory: category2)
-        let category3 = CarCategory(name: "SUV", image: "car_3", size: "4", isSelected: true)
+        let category3 = CarCategory(name: "SUV", image: "car_3", size: "4")
         categoryHelper.saveData(carCategory: category3)
-        let category4 = CarCategory(name: "Comfort", image: "car_4", size: "5", isSelected: true)
+        let category4 = CarCategory(name: "Comfort", image: "car_4", size: "5")
         categoryHelper.saveData(carCategory: category4)
         
         //save car

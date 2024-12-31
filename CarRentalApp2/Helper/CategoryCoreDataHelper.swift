@@ -26,6 +26,7 @@ class CategoryCoreDataHelper {
         newCategory.image = carCategory.image
         newCategory.name = carCategory.name
         newCategory.size = carCategory.size
+        newCategory.isSelected = false
         do {
             try context.save()
         } catch {

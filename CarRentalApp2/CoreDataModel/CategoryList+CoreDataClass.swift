@@ -2,7 +2,7 @@
 //  CategoryList+CoreDataClass.swift
 //  CarRentalApp2
 //
-//  Created by Mac on 27.12.24.
+//  Created by Mac on 30.12.24.
 //
 //
 

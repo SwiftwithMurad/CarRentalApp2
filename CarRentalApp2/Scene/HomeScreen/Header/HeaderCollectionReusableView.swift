@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     var category = [CategoryList]()
-    let categoryHelper = CategoryCoreDataHelper()
+    var sendCollection: ((UICollectionView) -> Void)?
     
     @IBOutlet private weak var headerCollection: UICollectionView!
     override func awakeFromNib() {
@@ -22,9 +22,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         headerCollection.delegate = self
         headerCollection.dataSource = self
         headerCollection.register(UINib(nibName: "\(HeaderCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HeaderCell.self)")
-        categoryHelper.fetchData { categoryList in
-            category = categoryList
-        }
+    }
+    
+    func configCategory(category: [CategoryList]) {
+        self.category = category
     }
 }
 
@@ -35,9 +36,7 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HeaderCell.self)", for: indexPath) as! HeaderCell
-        cell.configCell(category: category[indexPath.row]) { view in
-            view.layer.cornerRadius = 30
-        }
+        cell.configCell(category: category[indexPath.row])
         return cell
     }
     
@@ -47,9 +46,14 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! HeaderCell
-        cell.configView(completion: { view in
-            view.layer.cornerRadius = 30
-            view.backgroundColor = .systemBlue
-        }, category: category[indexPath.row])
+        category[indexPath.row].isSelected = true
+        sendCollection?(headerCollection)
+        cell.updateView(isSelected: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HeaderCell
+        category[indexPath.row].isSelected = false
+        cell.updateView(isSelected: false)
     }
 }
