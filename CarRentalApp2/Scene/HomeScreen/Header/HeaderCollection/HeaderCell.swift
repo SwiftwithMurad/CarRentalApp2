@@ -24,7 +24,8 @@ class HeaderCell: UICollectionViewCell {
         carImage.image = UIImage(named: category.image ?? "")
         categoryName.text = category.name
         categorySize.text = category.size
-        category.isSelected = false
+//        category.isSelected = false
+        updateView(isSelected: category.isSelected)
     }
     
     func updateView(isSelected: Bool) {

@@ -79,14 +79,9 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
         header.configCategory(category: category)
-        header.sendCollection = { collection in
-            if self.category[indexPath.row].isSelected == true {
-                self.cars = self.cars.filter({ $0.category == self.category[indexPath.row].name })
-                self.categoryListCollection.reloadData()
-            } else if self.category[indexPath.row].isSelected == false {
-                self.cars = self.existedCars
-                self.categoryListCollection.reloadData()
-            }
+        header.sendCollection = { name in            
+            self.cars = self.existedCars.filter({ $0.category == name })
+            self.categoryListCollection.reloadData()
         }
         return header
     }

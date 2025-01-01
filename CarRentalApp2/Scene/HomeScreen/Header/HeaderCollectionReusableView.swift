@@ -9,7 +9,8 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     var category = [CategoryList]()
-    var sendCollection: ((UICollectionView) -> Void)?
+    var sendCollection: ((String) -> Void)?
+//    var send: ((UICollectionView) -> Void)?
     
     @IBOutlet private weak var headerCollection: UICollectionView!
     override func awakeFromNib() {
@@ -45,15 +46,10 @@ extension HeaderCollectionReusableView: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! HeaderCell
-        category[indexPath.row].isSelected = true
-        sendCollection?(headerCollection)
-        cell.updateView(isSelected: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! HeaderCell
-        category[indexPath.row].isSelected = false
-        cell.updateView(isSelected: false)
+        for (index, _) in category.enumerated() {
+            category[index].isSelected = index == indexPath.item ? true : false
+        }
+        sendCollection?(category[indexPath.row].name ?? "")
+        headerCollection.reloadData()
     }
 }
