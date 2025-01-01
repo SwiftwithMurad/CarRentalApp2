@@ -10,7 +10,6 @@ import UIKit
 class HeaderCollectionReusableView: UICollectionReusableView {
     var category = [CategoryList]()
     var sendCollection: ((String) -> Void)?
-//    var send: ((UICollectionView) -> Void)?
     
     @IBOutlet private weak var headerCollection: UICollectionView!
     override func awakeFromNib() {
